@@ -1,2 +1,4 @@
-# nomad-aws-terraform-module
+# Nomad AWS Terraform Module
+
 Nomad Terraform Module for AWS deployment
+
