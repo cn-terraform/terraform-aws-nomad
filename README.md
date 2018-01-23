@@ -1,11 +1,13 @@
-# Nomad AWS Terraform Module
+# Nomad Terraform Module
 
-Nomad Terraform Module for AWS deployment
+This Terraform module deploys Nomad Servers and Nodes in AWS, Azure or GCP.
 
 ## Usage
 
-	module "paas" {
-	  source = "git::git@github.com:jnonino/nomad-aws-terraform-module.git"
+Amazon Web Services
+
+	module "nomad" {
+	  source = "github.com/jnonino/nomad-terraform-module//aws"
 
 	  names_preffix = ${terraform.workspace}
 
@@ -34,4 +36,16 @@ Nomad Terraform Module for AWS deployment
 	  client_asg_min_size         = 1
 	  client_asg_desired_capacity = 3
 	  client_asg_max_size         = 25
+	}
+
+Google Cloud Platform - PENDING  
+
+	module "nomad" {
+		source = "github.com/jnonino/nomad-terraform-module//gcp"
+	}
+
+Microsoft Azure - PENDING  
+
+	module "nomad" {
+		source = "github.com/jnonino/nomad-terraform-module//azure"
 	}
