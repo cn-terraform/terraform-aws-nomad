@@ -45,7 +45,7 @@
         key                 = "Name"
         value               = "${var.names_preffix}_server_asg"
         propagate_at_launch = true
-      },
+      }
     ]
   }
 
