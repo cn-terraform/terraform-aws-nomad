@@ -70,9 +70,11 @@ variable "consul_address" {
 # SERVER SETTINGS
 # ---------------------------------------------------------------------------------------------------------------------
 variable "server_ami_id" {
+  description = "AMI ID to use on servers"
   type = "string"
 }
 variable "server_instance_type" {
+  description = "AWS Instance type to use on servers"
   type    = "string"
 }
 variable "server_asg_min_size" {
@@ -89,9 +91,11 @@ variable "server_asg_max_size" {
 # NOMAD CLIENT SETTINGS
 # ---------------------------------------------------------------------------------------------------------------------
 variable "client_ami_id" {
+  description = "AMI ID to use on Clients"
   type = "string"
 }
 variable "client_instance_type" {
+  description = "AWS Instance type to use on clients"
   type    = "string"
 }
 variable "client_asg_min_size" {
