@@ -5,7 +5,8 @@ This Terraform module deploys Nomad Servers and Nodes in AWS.
 ## Usage
 
     module "nomad" {
-        source = "jnonino/nomad/aws"
+        source  = "jnonino/nomad/aws"
+        version = "1.0.0"
 
         names_preffix = ${terraform.workspace}
 
