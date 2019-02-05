@@ -4,6 +4,10 @@ This Terraform module deploys Nomad Servers and Nodes in AWS.
 
 ## Usage
 
+Check valid versions on:
+* Github Releases: <https://github.com/jnonino/terraform-aws-nomad/releases>
+* Terraform Module Registry: <https://registry.terraform.io/modules/jnonino/nomad/aws>
+
     module "nomad" {
         source  = "jnonino/nomad/aws"
         version = "1.0.0"
