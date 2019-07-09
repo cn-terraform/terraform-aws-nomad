@@ -2,6 +2,8 @@
 
 This Terraform module deploys Nomad Servers and Nodes in AWS.
 
+[![CircleCI](https://circleci.com/gh/jnonino/terraform-aws-nomad/tree/master.svg?style=svg)](https://circleci.com/gh/jnonino/terraform-aws-nomad/tree/master)
+
 ## Usage
 
 Check valid versions on:
