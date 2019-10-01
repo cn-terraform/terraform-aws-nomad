@@ -2,17 +2,17 @@
 
 This Terraform module deploys Nomad Servers and Nodes in AWS.
 
-[![CircleCI](https://circleci.com/gh/jnonino/terraform-aws-nomad/tree/master.svg?style=svg)](https://circleci.com/gh/jnonino/terraform-aws-nomad/tree/master)
-[![](https://img.shields.io/github/license/jnonino/terraform-aws-nomad)](https://github.com/jnonino/terraform-aws-nomad)
-[![](https://img.shields.io/github/issues/jnonino/terraform-aws-nomade)](https://github.com/jnonino/terraform-aws-nomad)
-[![](https://img.shields.io/github/issues-closed/jnonino/terraform-aws-nomad)](https://github.com/jnonino/terraform-aws-nomad)
-[![](https://img.shields.io/github/languages/code-size/jnonino/terraform-aws-nomad)](https://github.com/jnonino/terraform-aws-nomad)
-[![](https://img.shields.io/github/repo-size/jnonino/terraform-aws-nomad)](https://github.com/jnonino/terraform-aws-nomad)
+[![CircleCI](https://circleci.com/gh/cn-terraform/terraform-aws-nomad/tree/master.svg?style=svg)](https://circleci.com/gh/cn-terraform/terraform-aws-nomad/tree/master)
+[![](https://img.shields.io/github/license/cn-terraform/terraform-aws-nomad)](https://github.com/cn-terraform/terraform-aws-nomad)
+[![](https://img.shields.io/github/issues/cn-terraform/terraform-aws-nomade)](https://github.com/cn-terraform/terraform-aws-nomad)
+[![](https://img.shields.io/github/issues-closed/cn-terraform/terraform-aws-nomad)](https://github.com/cn-terraform/terraform-aws-nomad)
+[![](https://img.shields.io/github/languages/code-size/cn-terraform/terraform-aws-nomad)](https://github.com/cn-terraform/terraform-aws-nomad)
+[![](https://img.shields.io/github/repo-size/cn-terraform/terraform-aws-nomad)](https://github.com/cn-terraform/terraform-aws-nomad)
 
 ## Usage
 
 Check valid versions on:
-* Github Releases: <https://github.com/jnonino/terraform-aws-nomad/releases>
+* Github Releases: <https://github.com/cn-terraform/terraform-aws-nomad/releases>
 * Terraform Module Registry: <https://registry.terraform.io/modules/cn-terraform/nomad>
 
         module "nomad" {
