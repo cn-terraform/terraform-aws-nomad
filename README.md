@@ -17,7 +17,7 @@ Check valid versions on:
 
         module "nomad" {
             source  = "cn-terraform/nomad/aws"
-            version = "2.0.1"
+            version = "2.0.2"
 
             names_preffix = ${terraform.workspace}
 
@@ -30,7 +30,7 @@ Check valid versions on:
             ssh_key_name    = var.ssh_key_name
 
             cidrs_to_open_ports_on_security_groups = [ "XXX.XXX.XXX.XXX/XX" ]
-            
+
             consul_version = "0.9.2"
             nomad_version  = "0.6.0"
             consul_address = "consul.${var.domain_name}"
