@@ -1,8 +1,8 @@
-# ---------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 # SECURITY GROUPS - Open a list of Ports to allow connections to Nomad and Consul Instances
-# ---------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 
-## Security Group  
+## Security Group
 resource "aws_security_group" "instances_security_group" {
   name        = "instances_security_group"
   description = "Open ports on instances"
@@ -23,7 +23,7 @@ resource "aws_security_group_rule" "instances_security_group_allow_ingress_self"
   security_group_id = aws_security_group.instances_security_group.id
 }
 
-## Allow traffic from subnets  
+## Allow traffic from subnets
 resource "aws_security_group_rule" "instances_security_group_allow_ingress_subnets" {
   depends_on        = [aws_security_group.instances_security_group]
   count             = length(data.aws_subnet.subnets.*.cidr_block)
@@ -82,9 +82,9 @@ resource "aws_security_group_rule" "instances_security_group_allow_egress_traffi
   security_group_id = aws_security_group.instances_security_group.id
 }
 
-# ---------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 # SECURITY GROUPS - Open 22, 80 and 443 ports to allow connections on Load Balancers
-# ---------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 ## Security Group
 resource "aws_security_group" "elb_security_group" {
   name        = "elb_security_group"
