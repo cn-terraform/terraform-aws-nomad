@@ -1,5 +1,5 @@
-variable "names_preffix" {
-  description = "Preffix for Resources Names"
+variable "names_prefix" {
+  description = "prefix for Resources Names"
 }
 
 #------------------------------------------------------------------------------

@@ -8,7 +8,7 @@ data "template_file" "server_user_data" {
     region          = var.region
     desired_servers = var.server_asg_desired_capacity
     domain          = var.domain_name
-    asg_name        = "${var.names_preffix}_server_asg"
+    asg_name        = "${var.names_prefix}_server_asg"
     nomad_version   = var.nomad_version
   }
 }
@@ -21,7 +21,7 @@ resource "aws_launch_configuration" "server_lc" {
     aws_security_group.instances_security_group,
     aws_iam_instance_profile.ec2_describe_instance_profile,
   ]
-  name                        = "${var.names_preffix}_server_lc"
+  name                        = "${var.names_prefix}_server_lc"
   image_id                    = var.server_ami_id
   instance_type               = var.server_instance_type
   iam_instance_profile        = aws_iam_instance_profile.ec2_describe_instance_profile.name
@@ -37,7 +37,7 @@ resource "aws_launch_configuration" "server_lc" {
 #------------------------------------------------------------------------------
 resource "aws_autoscaling_group" "server_asg" {
   depends_on           = [aws_launch_configuration.server_lc]
-  name                 = "${var.names_preffix}_server_asg"
+  name                 = "${var.names_prefix}_server_asg"
   launch_configuration = aws_launch_configuration.server_lc.name
   vpc_zone_identifier  = var.subnets_ids
   min_size             = var.server_asg_min_size
@@ -46,7 +46,7 @@ resource "aws_autoscaling_group" "server_asg" {
   tags = [
     {
       key                 = "Name"
-      value               = "${var.names_preffix}_server_asg"
+      value               = "${var.names_prefix}_server_asg"
       propagate_at_launch = true
     },
   ]

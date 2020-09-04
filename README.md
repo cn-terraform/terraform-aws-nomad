@@ -19,7 +19,7 @@ Check valid versions on:
             source  = "cn-terraform/nomad/aws"
             version = "2.0.2"
 
-            names_preffix = ${terraform.workspace}
+            names_prefix = ${terraform.workspace}
 
             profile         = var.profile
             region          = var.region

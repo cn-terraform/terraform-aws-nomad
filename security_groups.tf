@@ -8,7 +8,7 @@ resource "aws_security_group" "instances_security_group" {
   description = "Open ports on instances"
   vpc_id      = var.vpc_id
   tags = {
-    Name = "${var.names_preffix}_instances_security_group"
+    Name = "${var.names_prefix}_instances_security_group"
   }
 }
 
@@ -91,7 +91,7 @@ resource "aws_security_group" "elb_security_group" {
   description = "Open ports on Load Balanacers"
   vpc_id      = var.vpc_id
   tags = {
-    Name = "${var.names_preffix}_elb_security_group"
+    Name = "${var.names_prefix}_elb_security_group"
   }
 }
 
