@@ -5,5 +5,7 @@ jobs:
       - image: hashicorp/terraform
     steps:
       - checkout
+      - run:
+          command: terraform fmt -check -recursive -diff
       - run: terraform init
       - run: terraform validate
