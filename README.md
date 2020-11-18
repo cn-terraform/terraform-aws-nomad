@@ -2,7 +2,7 @@
 
 This Terraform module deploys Nomad Servers and Nodes in AWS.
 
-[![CircleCI](https://circleci.com/gh/cn-terraform/terraform-aws-nomad/tree/master.svg?style=svg)](https://circleci.com/gh/cn-terraform/terraform-aws-nomad/tree/master)
+[![CircleCI](https://circleci.com/gh/cn-terraform/terraform-aws-nomad/tree/main.svg?style=svg)](https://circleci.com/gh/cn-terraform/terraform-aws-nomad/tree/main)
 [![](https://img.shields.io/github/license/cn-terraform/terraform-aws-nomad)](https://github.com/cn-terraform/terraform-aws-nomad)
 [![](https://img.shields.io/github/issues/cn-terraform/terraform-aws-nomade)](https://github.com/cn-terraform/terraform-aws-nomad)
 [![](https://img.shields.io/github/issues-closed/cn-terraform/terraform-aws-nomad)](https://github.com/cn-terraform/terraform-aws-nomad)
