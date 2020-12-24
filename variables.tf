@@ -18,7 +18,7 @@ variable "vpc_id" {
 }
 
 variable "subnets_ids" {
-  type        = list
+  type        = list(any)
   description = "Private Subnets"
 }
 
@@ -39,24 +39,24 @@ variable "ssh_key_name" {
 #------------------------------------------------------------------------------
 variable "cidrs_to_open_ports_on_security_groups" {
   description = "List of CIDRs to open ports on instances security group"
-  type        = list
+  type        = list(any)
 }
 
 variable "ports_to_open_on_elb_security_group" {
   description = "Ports to Open on ELB Security Group"
-  type        = list
+  type        = list(any)
   default     = ["22", "80", "443"]
 }
 
 variable "tcp_ports_to_open_on_instances_security_group" {
   description = "TCP Ports to Open on Instances Security Group"
-  type        = list
+  type        = list(any)
   default     = ["22", "4646", "4647", "4648", "8300", "8301", "8302", "8500", "8600"]
 }
 
 variable "udp_ports_to_open_on_instances_security_group" {
   description = "UDP Ports to Open on Instances Security Group"
-  type        = list
+  type        = list(any)
   default     = ["4648", "8301", "8302", "8600"]
 }
 
