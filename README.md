@@ -68,13 +68,14 @@ In order to run all checks at any point run the following command:
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 3.74.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
-| <a name="provider_template"></a> [template](#provider\_template) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.74.1 |
+| <a name="provider_template"></a> [template](#provider\_template) | 2.2.0 |
 
 ## Modules
 
@@ -84,36 +85,36 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_autoscaling_attachment.consul_asg_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_attachment) | resource |
-| [aws_autoscaling_attachment.nomad_asg_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_attachment) | resource |
-| [aws_autoscaling_group.nomad_client_asg](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group) | resource |
-| [aws_autoscaling_group.server_asg](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group) | resource |
-| [aws_elb.consul_elb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elb) | resource |
-| [aws_elb.nomad_elb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elb) | resource |
-| [aws_iam_instance_profile.ec2_describe_instance_profile](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
-| [aws_iam_instance_profile.ecr_role_instance_profile](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
-| [aws_iam_policy.ec2_describe_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
-| [aws_iam_policy.push_to_ecr_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
-| [aws_iam_policy_attachment.ec2_describe_attach_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy_attachment) | resource |
-| [aws_iam_policy_attachment.push_to_ecr_attach_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy_attachment) | resource |
-| [aws_iam_role.ec2_describe_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
-| [aws_iam_role.push_to_ecr_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
-| [aws_launch_configuration.nomad_client_lc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/launch_configuration) | resource |
-| [aws_launch_configuration.server_lc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/launch_configuration) | resource |
-| [aws_route53_record.consul_elb_dns](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
-| [aws_route53_record.nomad_elb_dns](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
-| [aws_security_group.elb_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [aws_security_group.instances_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [aws_security_group_rule.elb_security_group_allow_egress_traffic](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.elb_security_group_allow_ingress_open_ports_vpc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.elb_security_group_allow_ingress_open_ports_vpn](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.instances_security_group_allow_egress_traffic](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.instances_security_group_allow_ingress_open_tcp_ports](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.instances_security_group_allow_ingress_open_udp_ports](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.instances_security_group_allow_ingress_self](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.instances_security_group_allow_ingress_subnets](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_route53_zone.hosted_zone](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/route53_zone) | data source |
-| [aws_subnet.subnets](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnet) | data source |
+| [aws_autoscaling_attachment.consul_asg_attachment](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/autoscaling_attachment) | resource |
+| [aws_autoscaling_attachment.nomad_asg_attachment](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/autoscaling_attachment) | resource |
+| [aws_autoscaling_group.nomad_client_asg](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/autoscaling_group) | resource |
+| [aws_autoscaling_group.server_asg](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/autoscaling_group) | resource |
+| [aws_elb.consul_elb](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/elb) | resource |
+| [aws_elb.nomad_elb](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/elb) | resource |
+| [aws_iam_instance_profile.ec2_describe_instance_profile](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/iam_instance_profile) | resource |
+| [aws_iam_instance_profile.ecr_role_instance_profile](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/iam_instance_profile) | resource |
+| [aws_iam_policy.ec2_describe_policy](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/iam_policy) | resource |
+| [aws_iam_policy.push_to_ecr_policy](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/iam_policy) | resource |
+| [aws_iam_policy_attachment.ec2_describe_attach_policy](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/iam_policy_attachment) | resource |
+| [aws_iam_policy_attachment.push_to_ecr_attach_policy](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/iam_policy_attachment) | resource |
+| [aws_iam_role.ec2_describe_role](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/iam_role) | resource |
+| [aws_iam_role.push_to_ecr_role](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/iam_role) | resource |
+| [aws_launch_configuration.nomad_client_lc](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/launch_configuration) | resource |
+| [aws_launch_configuration.server_lc](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/launch_configuration) | resource |
+| [aws_route53_record.consul_elb_dns](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/route53_record) | resource |
+| [aws_route53_record.nomad_elb_dns](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/route53_record) | resource |
+| [aws_security_group.elb_security_group](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/security_group) | resource |
+| [aws_security_group.instances_security_group](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/security_group) | resource |
+| [aws_security_group_rule.elb_security_group_allow_egress_traffic](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.elb_security_group_allow_ingress_open_ports_vpc](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.elb_security_group_allow_ingress_open_ports_vpn](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.instances_security_group_allow_egress_traffic](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.instances_security_group_allow_ingress_open_tcp_ports](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.instances_security_group_allow_ingress_open_udp_ports](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.instances_security_group_allow_ingress_self](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.instances_security_group_allow_ingress_subnets](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/security_group_rule) | resource |
+| [aws_route53_zone.hosted_zone](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/data-sources/route53_zone) | data source |
+| [aws_subnet.subnets](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/data-sources/subnet) | data source |
 | [template_file.nomad_client_user_data](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
 | [template_file.server_user_data](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
 
