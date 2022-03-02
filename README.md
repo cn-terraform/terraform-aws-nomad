@@ -19,7 +19,7 @@ Check valid versions on:
             source  = "cn-terraform/nomad/aws"
             version = "2.0.2"
 
-            names_prefix = ${terraform.workspace}
+            name_prefix = ${terraform.workspace}
 
             profile         = var.profile
             region          = var.region
@@ -55,7 +55,7 @@ Pleas run this command right after cloning the repository.
         pre-commit install
 
 For that you may need to install the folowwing tools:
-* [Pre-commit](https://pre-commit.com/) 
+* [Pre-commit](https://pre-commit.com/)
 * [Terraform Docs](https://terraform-docs.io/)
 
 In order to run all checks at any point run the following command:
@@ -131,11 +131,9 @@ No modules.
 | <a name="input_consul_address"></a> [consul\_address](#input\_consul\_address) | Consul Address | `any` | n/a | yes |
 | <a name="input_consul_version"></a> [consul\_version](#input\_consul\_version) | Consul Version | `string` | `"0.9.2"` | no |
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | Domain Name | `any` | n/a | yes |
-| <a name="input_names_prefix"></a> [names\_prefix](#input\_names\_prefix) | prefix for Resources Names | `any` | n/a | yes |
+| <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | prefix for Resources Names | `any` | n/a | yes |
 | <a name="input_nomad_version"></a> [nomad\_version](#input\_nomad\_version) | Nomad Version | `string` | `"0.6.0"` | no |
 | <a name="input_ports_to_open_on_elb_security_group"></a> [ports\_to\_open\_on\_elb\_security\_group](#input\_ports\_to\_open\_on\_elb\_security\_group) | Ports to Open on ELB Security Group | `list(any)` | <pre>[<br>  "22",<br>  "80",<br>  "443"<br>]</pre> | no |
-| <a name="input_profile"></a> [profile](#input\_profile) | AWS API key credentials to use | `any` | n/a | yes |
-| <a name="input_region"></a> [region](#input\_region) | AWS Region the infrastructure is hosted in | `any` | n/a | yes |
 | <a name="input_route53_zone_id"></a> [route53\_zone\_id](#input\_route53\_zone\_id) | Route53 Zone ID to fetch | `any` | n/a | yes |
 | <a name="input_server_ami_id"></a> [server\_ami\_id](#input\_server\_ami\_id) | AMI ID to use on servers | `string` | n/a | yes |
 | <a name="input_server_asg_desired_capacity"></a> [server\_asg\_desired\_capacity](#input\_server\_asg\_desired\_capacity) | Desired Number of Instances of PAAS Server to Create | `any` | n/a | yes |
