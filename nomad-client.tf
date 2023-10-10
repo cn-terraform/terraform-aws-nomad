@@ -18,7 +18,7 @@ resource "aws_launch_configuration" "nomad_client_lc" {
     aws_autoscaling_attachment.nomad_asg_attachment,
     aws_security_group.instances_security_group,
   ]
-  name                        = "${var.names_prefix}_nomad_client_lc"
+  name                        = "${var.name_prefix}_nomad_client_lc"
   image_id                    = var.client_ami_id
   instance_type               = var.client_instance_type
   iam_instance_profile        = aws_iam_instance_profile.ecr_role_instance_profile.name
@@ -34,7 +34,7 @@ resource "aws_launch_configuration" "nomad_client_lc" {
 #------------------------------------------------------------------------------
 resource "aws_autoscaling_group" "nomad_client_asg" {
   depends_on           = [aws_launch_configuration.nomad_client_lc]
-  name                 = "${var.names_prefix}_nomad_client_asg"
+  name                 = "${var.name_prefix}_nomad_client_asg"
   launch_configuration = aws_launch_configuration.nomad_client_lc.name
   vpc_zone_identifier  = var.subnets_ids
   min_size             = var.client_asg_min_size
@@ -43,9 +43,8 @@ resource "aws_autoscaling_group" "nomad_client_asg" {
   tags = [
     {
       key                 = "Name"
-      value               = "${var.names_prefix}_nomad_client_asg"
+      value               = "${var.name_prefix}_nomad_client_asg"
       propagate_at_launch = true
     },
   ]
 }
-
