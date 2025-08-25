@@ -1,17 +1,18 @@
-variable "name_prefix" {
-  description = "prefix for Resources Names"
+module "base-network" {
+  source                                      = "cn-terraform/networking/aws"
+  name_prefix                                 = "test-networking"
+  vpc_cidr_block                              = "192.168.0.0/16"
+  availability_zones                          = ["us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d"]
+  public_subnets_cidrs_per_availability_zone  = ["192.168.0.0/19", "192.168.32.0/19", "192.168.64.0/19", "192.168.96.0/19"]
+  private_subnets_cidrs_per_availability_zone = ["192.168.128.0/19", "192.168.160.0/19", "192.168.192.0/19", "192.168.224.0/19"]
 }
 
-#------------------------------------------------------------------------------
-# NETWORK - SETTINGS
-#------------------------------------------------------------------------------
-variable "vpc_id" {
-  description = "VPC ID"
-}
-
-variable "subnets_ids" {
-  type        = list(any)
-  description = "Private Subnets"
+module "nomad" {
+  source      = "../../"
+  name_prefix = "nomad"
+  region      = "us-east-1"
+  vpc_id      = module.base-network.vpc_id
+  subnets_ids = module.base-network.private_subnets_ids
 }
 
 variable "route53_zone_id" {
@@ -57,12 +58,12 @@ variable "udp_ports_to_open_on_instances_security_group" {
 #------------------------------------------------------------------------------
 variable "consul_version" {
   description = "Consul Version"
-  default     = "0.9.2"
+  default     = "v1.11.4"
 }
 
 variable "nomad_version" {
   description = "Nomad Version"
-  default     = "0.6.0"
+  default     = "v1.2.6"
 }
 
 variable "consul_address" {
