@@ -5,7 +5,7 @@ sudo groupadd docker
 sudo usermod -aG docker ec2-user
 
 curl -O https://releases.hashicorp.com/nomad/${nomad_version}/nomad_${nomad_version}_linux_amd64.zip
-unzip nomad_${nomad_version}_linux_amd64.zip   
+unzip nomad_${nomad_version}_linux_amd64.zip
 rm -f nomad_${nomad_version}_linux_amd64.zip
 sudo mv nomad /usr/local/bin
 sudo mkdir /etc/nomad.d
