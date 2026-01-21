@@ -3,13 +3,13 @@
 #------------------------------------------------------------------------------
 ## ELB
 resource "aws_elb" "consul_elb" {
-  name                      = "${var.names_prefix}-consul-elb"
+  name                      = "${var.name_prefix}-consul-elb"
   security_groups           = [aws_security_group.elb_security_group.id]
   subnets                   = data.aws_subnet.subnets.*.id
   internal                  = true
   cross_zone_load_balancing = true
   tags = {
-    Name = "${var.names_prefix}_consul_elb"
+    Name = "${var.name_prefix}_consul_elb"
   }
   listener {
     instance_port     = "8500"
@@ -37,13 +37,13 @@ resource "aws_route53_record" "consul_elb_dns" {
 #------------------------------------------------------------------------------
 ## ELB
 resource "aws_elb" "nomad_elb" {
-  name                      = "${var.names_prefix}-nomad-elb"
+  name                      = "${var.name_prefix}-nomad-elb"
   security_groups           = [aws_security_group.elb_security_group.id]
   subnets                   = data.aws_subnet.subnets.*.id
   internal                  = true
   cross_zone_load_balancing = true
   tags = {
-    Name = "${var.names_prefix}_nomad_elb"
+    Name = "${var.name_prefix}_nomad_elb"
   }
   listener {
     instance_port     = "4646"
@@ -65,4 +65,3 @@ resource "aws_route53_record" "nomad_elb_dns" {
     evaluate_target_health = true
   }
 }
-
