@@ -65,4 +65,3 @@ resource "aws_route53_record" "nomad_elb_dns" {
     evaluate_target_health = true
   }
 }
-

@@ -129,4 +129,3 @@ resource "aws_security_group_rule" "elb_security_group_allow_egress_traffic" {
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.elb_security_group.id
 }
-

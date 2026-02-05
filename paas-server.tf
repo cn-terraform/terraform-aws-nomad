@@ -66,4 +66,3 @@ resource "aws_autoscaling_attachment" "nomad_asg_attachment" {
   autoscaling_group_name = aws_autoscaling_group.server_asg.id
   elb                    = aws_elb.nomad_elb.id
 }
-
