@@ -8,7 +8,7 @@ resource "aws_security_group" "instances_security_group" {
   description = "Open ports on instances"
   vpc_id      = var.vpc_id
   tags = {
-    Name = "${var.names_prefix}_instances_security_group"
+    Name = "${var.name_prefix}_instances_security_group"
   }
 }
 
@@ -91,7 +91,7 @@ resource "aws_security_group" "elb_security_group" {
   description = "Open ports on Load Balanacers"
   vpc_id      = var.vpc_id
   tags = {
-    Name = "${var.names_prefix}_elb_security_group"
+    Name = "${var.name_prefix}_elb_security_group"
   }
 }
 
@@ -129,4 +129,3 @@ resource "aws_security_group_rule" "elb_security_group_allow_egress_traffic" {
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.elb_security_group.id
 }
-

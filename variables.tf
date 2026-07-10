@@ -1,18 +1,10 @@
-variable "names_prefix" {
+variable "name_prefix" {
   description = "prefix for Resources Names"
 }
 
 #------------------------------------------------------------------------------
-# AWS CREDENTIALS AND REGION - NETWORK - SETTINGS
+# NETWORK - SETTINGS
 #------------------------------------------------------------------------------
-variable "profile" {
-  description = "AWS API key credentials to use"
-}
-
-variable "region" {
-  description = "AWS Region the infrastructure is hosted in"
-}
-
 variable "vpc_id" {
   description = "VPC ID"
 }
@@ -126,4 +118,3 @@ variable "client_asg_desired_capacity" {
 variable "client_asg_max_size" {
   description = "Max Number of Instances of Nomad Client to Create"
 }
-
