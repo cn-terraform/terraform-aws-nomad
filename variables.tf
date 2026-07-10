@@ -126,4 +126,3 @@ variable "client_asg_desired_capacity" {
 variable "client_asg_max_size" {
   description = "Max Number of Instances of Nomad Client to Create"
 }
-

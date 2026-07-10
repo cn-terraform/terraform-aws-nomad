@@ -61,4 +61,3 @@ resource "aws_iam_instance_profile" "ecr_role_instance_profile" {
   name = "${var.names_prefix}_push_to_ecr_instance_profile"
   role = aws_iam_role.push_to_ecr_role.name
 }
-

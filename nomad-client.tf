@@ -48,4 +48,3 @@ resource "aws_autoscaling_group" "nomad_client_asg" {
     },
   ]
 }
-
