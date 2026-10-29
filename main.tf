@@ -18,4 +18,3 @@ data "aws_route53_zone" "hosted_zone" {
   zone_id = var.route53_zone_id
   vpc_id  = var.vpc_id
 }
-

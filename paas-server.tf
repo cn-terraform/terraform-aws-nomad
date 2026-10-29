@@ -1,16 +1,15 @@
 #------------------------------------------------------------------------------
-# PAAS SERVER - Launch Configuration User Data
+# PAAS SERVER - Launch Template User Data
 #------------------------------------------------------------------------------
-data "template_file" "server_user_data" {
-  template = file("${path.module}/templates/server.sh")
-  vars = {
+locals {
+  server_user_data = templatefile("${path.module}/templates/server.sh", {
     consul_version  = var.consul_version
     region          = var.region
     desired_servers = var.server_asg_desired_capacity
     domain          = var.domain_name
     asg_name        = "${var.names_prefix}_server_asg"
     nomad_version   = var.nomad_version
-  }
+  })
 }
 
 #------------------------------------------------------------------------------
@@ -29,7 +28,7 @@ resource "aws_launch_configuration" "server_lc" {
   associate_public_ip_address = false
   enable_monitoring           = true
   key_name                    = var.ssh_key_name
-  user_data                   = data.template_file.server_user_data.rendered
+  user_data                   = local.server_user_data
 }
 
 #------------------------------------------------------------------------------
@@ -43,13 +42,11 @@ resource "aws_autoscaling_group" "server_asg" {
   min_size             = var.server_asg_min_size
   desired_capacity     = var.server_asg_desired_capacity
   max_size             = var.server_asg_max_size
-  tags = [
-    {
-      key                 = "Name"
-      value               = "${var.names_prefix}_server_asg"
-      propagate_at_launch = true
-    },
-  ]
+  tag {
+    key                 = "Name"
+    value               = "${var.names_prefix}_server_asg"
+    propagate_at_launch = true
+  }
 }
 
 #------------------------------------------------------------------------------
@@ -66,4 +63,3 @@ resource "aws_autoscaling_attachment" "nomad_asg_attachment" {
   autoscaling_group_name = aws_autoscaling_group.server_asg.id
   elb                    = aws_elb.nomad_elb.id
 }
-
