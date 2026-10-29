@@ -55,27 +55,26 @@ Pleas run this command right after cloning the repository.
         pre-commit install
 
 For that you may need to install the folowwing tools:
-* [Pre-commit](https://pre-commit.com/) 
+* [Pre-commit](https://pre-commit.com/)
 * [Terraform Docs](https://terraform-docs.io/)
 
 In order to run all checks at any point run the following command:
 
         pre-commit run --all-files
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.0.0 |
-| <a name="provider_template"></a> [template](#provider\_template) | 2.2.0 |
+| ---- | ------- |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4 |
 
 ## Modules
 
@@ -84,7 +83,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_autoscaling_attachment.consul_asg_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_attachment) | resource |
 | [aws_autoscaling_attachment.nomad_asg_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_attachment) | resource |
 | [aws_autoscaling_group.nomad_client_asg](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group) | resource |
@@ -115,13 +114,11 @@ No modules.
 | [aws_security_group_rule.instances_security_group_allow_ingress_subnets](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
 | [aws_route53_zone.hosted_zone](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/route53_zone) | data source |
 | [aws_subnet.subnets](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnet) | data source |
-| [template_file.nomad_client_user_data](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
-| [template_file.server_user_data](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_cidrs_to_open_ports_on_security_groups"></a> [cidrs\_to\_open\_ports\_on\_security\_groups](#input\_cidrs\_to\_open\_ports\_on\_security\_groups) | List of CIDRs to open ports on instances security group | `list(any)` | n/a | yes |
 | <a name="input_client_ami_id"></a> [client\_ami\_id](#input\_client\_ami\_id) | AMI ID to use on Clients | `string` | n/a | yes |
 | <a name="input_client_asg_desired_capacity"></a> [client\_asg\_desired\_capacity](#input\_client\_asg\_desired\_capacity) | Desired Number of Instances of Nomad Client to Create | `any` | n/a | yes |
@@ -133,7 +130,7 @@ No modules.
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | Domain Name | `any` | n/a | yes |
 | <a name="input_names_prefix"></a> [names\_prefix](#input\_names\_prefix) | prefix for Resources Names | `any` | n/a | yes |
 | <a name="input_nomad_version"></a> [nomad\_version](#input\_nomad\_version) | Nomad Version | `string` | `"0.6.0"` | no |
-| <a name="input_ports_to_open_on_elb_security_group"></a> [ports\_to\_open\_on\_elb\_security\_group](#input\_ports\_to\_open\_on\_elb\_security\_group) | Ports to Open on ELB Security Group | `list(any)` | <pre>[<br>  "22",<br>  "80",<br>  "443"<br>]</pre> | no |
+| <a name="input_ports_to_open_on_elb_security_group"></a> [ports\_to\_open\_on\_elb\_security\_group](#input\_ports\_to\_open\_on\_elb\_security\_group) | Ports to Open on ELB Security Group | `list(any)` | <pre>[<br/>  "22",<br/>  "80",<br/>  "443"<br/>]</pre> | no |
 | <a name="input_profile"></a> [profile](#input\_profile) | AWS API key credentials to use | `any` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | AWS Region the infrastructure is hosted in | `any` | n/a | yes |
 | <a name="input_route53_zone_id"></a> [route53\_zone\_id](#input\_route53\_zone\_id) | Route53 Zone ID to fetch | `any` | n/a | yes |
@@ -144,11 +141,11 @@ No modules.
 | <a name="input_server_instance_type"></a> [server\_instance\_type](#input\_server\_instance\_type) | AWS Instance type to use on servers | `string` | n/a | yes |
 | <a name="input_ssh_key_name"></a> [ssh\_key\_name](#input\_ssh\_key\_name) | SSH Key Name | `any` | n/a | yes |
 | <a name="input_subnets_ids"></a> [subnets\_ids](#input\_subnets\_ids) | Private Subnets | `list(any)` | n/a | yes |
-| <a name="input_tcp_ports_to_open_on_instances_security_group"></a> [tcp\_ports\_to\_open\_on\_instances\_security\_group](#input\_tcp\_ports\_to\_open\_on\_instances\_security\_group) | TCP Ports to Open on Instances Security Group | `list(any)` | <pre>[<br>  "22",<br>  "4646",<br>  "4647",<br>  "4648",<br>  "8300",<br>  "8301",<br>  "8302",<br>  "8500",<br>  "8600"<br>]</pre> | no |
-| <a name="input_udp_ports_to_open_on_instances_security_group"></a> [udp\_ports\_to\_open\_on\_instances\_security\_group](#input\_udp\_ports\_to\_open\_on\_instances\_security\_group) | UDP Ports to Open on Instances Security Group | `list(any)` | <pre>[<br>  "4648",<br>  "8301",<br>  "8302",<br>  "8600"<br>]</pre> | no |
+| <a name="input_tcp_ports_to_open_on_instances_security_group"></a> [tcp\_ports\_to\_open\_on\_instances\_security\_group](#input\_tcp\_ports\_to\_open\_on\_instances\_security\_group) | TCP Ports to Open on Instances Security Group | `list(any)` | <pre>[<br/>  "22",<br/>  "4646",<br/>  "4647",<br/>  "4648",<br/>  "8300",<br/>  "8301",<br/>  "8302",<br/>  "8500",<br/>  "8600"<br/>]</pre> | no |
+| <a name="input_udp_ports_to_open_on_instances_security_group"></a> [udp\_ports\_to\_open\_on\_instances\_security\_group](#input\_udp\_ports\_to\_open\_on\_instances\_security\_group) | UDP Ports to Open on Instances Security Group | `list(any)` | <pre>[<br/>  "4648",<br/>  "8301",<br/>  "8302",<br/>  "8600"<br/>]</pre> | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | VPC ID | `any` | n/a | yes |
 
 ## Outputs
 
 No outputs.
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

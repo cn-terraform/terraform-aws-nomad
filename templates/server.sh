@@ -3,7 +3,7 @@
 # CONSUL SERVER
 
 curl -O https://releases.hashicorp.com/consul/${consul_version}/consul_${consul_version}_linux_amd64.zip
-unzip consul_${consul_version}_linux_amd64.zip   
+unzip consul_${consul_version}_linux_amd64.zip
 rm -f consul_${consul_version}_linux_amd64.zip
 sudo mv consul /usr/local/bin
 
@@ -13,7 +13,7 @@ echo "/usr/local/bin/consul agent -server -data-dir=/tmp/consul -client=0.0.0.0 
 # NOMAD SERVER
 
 curl -O https://releases.hashicorp.com/nomad/${nomad_version}/nomad_${nomad_version}_linux_amd64.zip
-unzip nomad_${nomad_version}_linux_amd64.zip   
+unzip nomad_${nomad_version}_linux_amd64.zip
 rm -f nomad_${nomad_version}_linux_amd64.zip
 sudo mv nomad /usr/local/bin
 sudo mkdir /etc/nomad.d

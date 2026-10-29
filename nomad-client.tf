@@ -1,13 +1,12 @@
 #------------------------------------------------------------------------------
 # NOMAD CLIENT - Launch Configuration User Data
 #------------------------------------------------------------------------------
-data "template_file" "nomad_client_user_data" {
-  template = file("${path.module}/templates/nomad_client.sh")
-  vars = {
+locals {
+  nomad_client_user_data = templatefile("${path.module}/templates/nomad_client.sh", {
     nomad_version  = var.nomad_version
     region         = var.region
     consul_address = var.consul_address
-  }
+  })
 }
 
 #------------------------------------------------------------------------------
@@ -26,7 +25,7 @@ resource "aws_launch_configuration" "nomad_client_lc" {
   associate_public_ip_address = false
   enable_monitoring           = true
   key_name                    = var.ssh_key_name
-  user_data                   = data.template_file.nomad_client_user_data.rendered
+  user_data                   = local.nomad_client_user_data
 }
 
 #------------------------------------------------------------------------------
@@ -40,12 +39,9 @@ resource "aws_autoscaling_group" "nomad_client_asg" {
   min_size             = var.client_asg_min_size
   desired_capacity     = var.client_asg_desired_capacity
   max_size             = var.client_asg_max_size
-  tags = [
-    {
-      key                 = "Name"
-      value               = "${var.names_prefix}_nomad_client_asg"
-      propagate_at_launch = true
-    },
-  ]
+  tag {
+    key                 = "Name"
+    value               = "${var.names_prefix}_nomad_client_asg"
+    propagate_at_launch = true
+  }
 }
-
